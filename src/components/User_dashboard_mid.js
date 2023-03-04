@@ -1,9 +1,6 @@
 import search from "./images/search.png";
 import bookmark from "./images/bookmark.png";
 
-import share from "./images/share.png";
-import pocket from "./images/pocket.png";
-
 import { API } from "./Constant";
 
 import axios from "axios";
@@ -67,37 +64,7 @@ function User_dashboard(){
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap justify-between">
-                <div className="w-[150px] flex items-center justify-center border-[#072d4b] border-2 rounded-md  m-4 py-2 shadow-md bg-white cursor-pointer">
-                    <div className="text-center">
-                        <img src={bookmark} className="w-[50px] m-auto" />
-                        <p className="text-[20px] font-medium text-[#072d4b] mt-3">Bookmarks</p>
-                    </div>
-                </div>
-                {/* <div className="w-[150px] flex items-center justify-center border-[#072d4b] border-2 rounded-md  m-4 py-2 shadow-md bg-white cursor-pointer">
-                    <div className="text-center">
-                        <img src={bookmark} className="w-[50px] m-auto" />
-                        <p className="text-[20px] font-medium text-[#072d4b] mt-3">Bookmarks</p>
-                    </div>
-                </div>
-                <div className="w-[150px] flex items-center justify-center border-[#072d4b] border-2 rounded-md  m-4 py-2 shadow-md bg-white cursor-pointer">
-                    <div className="text-center">
-                        <img src={bookmark} className="w-[50px] m-auto" />
-                        <p className="text-[20px] font-medium text-[#072d4b] mt-3">Bookmarks</p>
-                    </div>
-                </div>
-                <div className="w-[150px] flex items-center justify-center border-[#072d4b] border-2 rounded-md m-4 py-2 shadow-md bg-white cursor-pointer">
-                    <div className="text-center">
-                        <img src={bookmark} className="w-[50px] m-auto" />
-                        <p className="text-[20px] font-medium text-[#072d4b] mt-3">Bookmarks</p>
-                    </div>
-                </div>
-                <div className="w-[150px] flex items-center justify-center border-[#072d4b] border-2 rounded-md m-4  py-2 shadow-md bg-white cursor-pointer">
-                    <div className="text-center">
-                        <img src={bookmark} className="w-[50px] m-auto" />
-                        <p className="text-[20px] font-medium text-[#072d4b] mt-3">Bookmarks</p>
-                    </div>
-                </div> */}
+            <div className="flex flex-wrap justify-between">              
             </div>
         </div>
     );

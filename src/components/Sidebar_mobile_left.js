@@ -25,15 +25,15 @@ import { useState } from "react";
 
 function Sidebar_mobile_left() {
 
-    const [liImage1, setLiImage1] = useState(true);
-    const [liImage2, setLiImage2] = useState(true);
-    const [liImage3, setLiImage3] = useState(true);
-    const [liImage4, setLiImage4] = useState(true);
-    const [liImage5, setLiImage5] = useState(true);
-    const [liImage6, setLiImage6] = useState(true);
-    const [liImage7, setLiImage7] = useState(true);
-    const [liImage8, setLiImage8] = useState(true);
-    const [liImage9, setLiImage9] = useState(true);
+      const [liImage1, setLiImage1] = useState(true);
+      const [liImage2, setLiImage2] = useState(true);
+      const [liImage3, setLiImage3] = useState(true);
+      const [liImage4, setLiImage4] = useState(true);
+      const [liImage5, setLiImage5] = useState(true);
+      const [liImage6, setLiImage6] = useState(true);
+      const [liImage7, setLiImage7] = useState(true);
+      const [liImage8, setLiImage8] = useState(true);
+      const [liImage9, setLiImage9] = useState(true);
     const [liImage10, setLiImage10] = useState(true);
     
   return (

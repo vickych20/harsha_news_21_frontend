@@ -7,14 +7,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { API } from "./Constant";
 
-function Home_mid_new(){
+function User_dashboard_feed_mid(){
 
     const [news, setNews] = useState([]);
     const [categories, setCategories] = useState([]);
     const [category, setCategory] = useState("");
 
     // add bookmark
-
     const getNews = () => {
         axios.get(`${API}/news`).then((response) => {
           console.log(response.data);
@@ -51,7 +50,7 @@ function Home_mid_new(){
       
     return(
         <div className="home_mid">
-          <div className="">
+          <div className="bg-[#F4F9F8]">
             <div className="flex items-center h-[60px] px-4 w-full">
               <div className="flex items-center justify-between w-full">
                 <div className="min-w-[30px] max-w-[30px] mx-2 menu_icon xl:hidden cursor-pointer" 
@@ -96,7 +95,6 @@ function Home_mid_new(){
                       return (
                         <>
                           <div className="p-2 lg:w-1/2 2xl:w-1/3">
-                            
                             <div className="bg-white p-4 shadow-md min-h-full flex flex-col justify-between">
                               <div className="sm:hidden w-full cursor-pointer">
                                 <img src={val.image} className="w-full" alt="" />
@@ -151,4 +149,4 @@ function Home_mid_new(){
         </div>
     );
 }
-export default Home_mid_new;
+export default User_dashboard_feed_mid;

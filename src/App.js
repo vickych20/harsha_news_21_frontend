@@ -12,13 +12,22 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import User_dashboard from "./components/User_dashboard";
+import User_dashboard_profile from "./components/User_dashboard_profile";
+import User_dashboard_bookmarks from "./components/User_dashboard_bookmarks";
+import User_dashboard_feed from "./components/User_dashboard_feed";
+import User_dashboard_feed_mid from "./components/User_dashboard_feed_mid";
+import User_dashboard_myposts from "./components/User_dashboard_myposts";
+import User_dashboard_notifications from "./components/User_dashboard_notifications";
+import User_dashboard_watchlists from "./components/User_dashboard_watchlists";
 import axios from "axios";
+import Register_new from "./components/Register_new";
 axios.defaults.withCredentials = true;
+
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/"  exact element={<Home />} />
+        <Route path="/news-feed" element={<Home />} />
         <Route path="/sidebar-left" element={<Sidebar_left />} />
         <Route path="/sidebar-mobile-left" element={<Sidebar_mobile_left />} />
         <Route path="/sidebar-right" element={<Sidebar_right />} />
@@ -31,6 +40,14 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/user-dashboard" element={<User_dashboard/>}/>
+        <Route path="/user-dashboard-profile" element={<User_dashboard_profile/>}/>
+        <Route path="/user-dashboard-bookmarks" element={<User_dashboard_bookmarks/>}/>
+        <Route path="/user-dashboard-feed" element={<User_dashboard_feed/>}/>
+        <Route path="/user-dashboard-feed-mid" element={<User_dashboard_feed_mid/>}/>
+        <Route path="/user-dashboard-myposts" element={<User_dashboard_myposts/>}/>
+        <Route path="/user-dashboard-notifications" element={<User_dashboard_notifications/>}/>
+        <Route path="/user-dashboard-watchlists" element={<User_dashboard_watchlists/>}/>
+        <Route path="/" element={<Register_new/>}/>
       </Routes>
     </div>
   );

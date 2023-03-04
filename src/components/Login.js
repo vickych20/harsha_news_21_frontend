@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Sidebar_right from "./Sidebar_right";
@@ -9,6 +9,25 @@ import { API } from "./Constant";
 
 
 export default function Register() {
+
+  // work`s vicky
+  // const email = useRef();
+  // const password = useRef();
+  
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log(email.current.value)
+  }
+
+
+
+
+
+
+
+
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,33 +49,46 @@ export default function Register() {
   }
   return (
     <>
-    <div className="flex">
-      <Sidebar_left/>
-      <div className="login w-full min-h-[100vh] p-6 bg-[#f4f9f8]">
-        <div className="w-full min-h-[100vh] flex items-center justify-center">
-          <div className="w-[400px] h-full bg-[#0768b5] rounded-md shadow-md  p-6">
-            <h1 className="text-white font-semibold text-[30px]">Login</h1>
-            <input
-            type="email"
-            placeholder="Email"
-            className="w-[350px] h-[40px] border-[#0768b5] border rounded-sm  mt-4 px-2"
-            onChange={(e) => setEmail(e.target.value)}
-            name={email}
-            />
-            <input
-            type="password"
-            placeholder="Password"
-            className="w-[350px] h-[40px] border-[#0768b5] border rounded-sm  mt-4 px-2"
-            onChange={(e) => setPassword(e.target.value)}
-            name={password}
-            />
-            <button type="submit" className="w-[350px] h-[40px] border-[#0768b5] border rounded-sm mt-4 px-2 bg-white text-[#0768b5] font-medium" onClick={()=>{Login_user()}} >Login</button>
+      <div className="flex">
+        <Sidebar_left />
+        <div className="login w-full min-h-[100vh] p-6 bg-[#f4f9f8]">
+          <div className="w-full min-h-[100vh] flex items-center justify-center">
+            <div
+              className="w-[400px] h-full bg-[#0768b5] rounded-md shadow-md  p-6"
+              onSubmit={handleClick}
+            >
+              <h1 className="text-white font-semibold text-[30px]">Login</h1>
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-[350px] h-[40px] border-[#0768b5] border rounded-sm  mt-4 px-2 outline-none"
+                onChange={(e) => setEmail(e.target.value)}
+                name={email}
+                // ref={email}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-[350px] h-[40px] border-[#0768b5] border rounded-sm  mt-4 px-2 outline-none"
+                onChange={(e) => setPassword(e.target.value)}
+                name={password}
+                // ref={password}
+              />
+              <button
+                type="submit"
+                className="w-[350px] h-[40px] border-[#0768b5] border rounded-sm mt-4 px-2 bg-white text-[#0768b5] font-medium"
+                onClick={() => {
+                  Login_user();
+                }}
+              >
+                Login
+              </button>
+            </div>
           </div>
         </div>
+        <Sidebar_right />
       </div>
-      <Sidebar_right/>
-    </div>
-    <Sidebar_mobile_left/>
+      <Sidebar_mobile_left />
     </>
   );
 }

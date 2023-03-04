@@ -10,7 +10,7 @@ import windows11 from "./images/windows11.png";
 import iphone13 from "./images/iphone13.png";
 import hardik_pandya from "./images/hardik_pandya.png";
 import ind_vs_eng from "./images/ind_vs_eng.png";
-import feather from "./images/feather.png";
+import feather from "./images/feather.png";  
 import arrow_left from "./images/arrow-left.png";
 import arrow_right from "./images/arrow-right.png";
 
