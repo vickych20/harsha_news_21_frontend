@@ -3,18 +3,55 @@ import svg_img from "./../assets/svg/graph.svg";
 import login_img from "./../assets/img/login_img.jpg";
 
 const Register_new = () => {
-    const [backend, setBackendData] = useState([{}]);
+
+  const [name, setName] = useState('');
+  const [last, setLast] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
 
 
-    useEffect(() => {
-        fetch("/").then(
-            response=>response.json()
-        ).then(
-            data => {
-                setBackendData(data)
-            }
-        )
-    },[])
+  const handleLogin = async() => {
+    console.log(email, name, phone, password,last);
+    const result = await fetch("http://localhost:4000/api/v1/register", {
+      method: "post",
+      body: JSON.stringify({ name, last, password, email, phone }),
+      
+      headers: {
+        'Content-Type':'application/json'
+      },
+
+    });
+    
+    console.log(await result.json());
+   
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    // const [backend, setBackendData] = useState([{}]);
+
+
+    
+    // useEffect(() => {
+    //     fetch("/").then(
+    //         response=>response.json()
+    //     ).then(
+    //         data => {
+    //             setBackendData(data)
+    //         }
+    //     )
+    // },[])
 
     // const history = unstable_HistoryRouter();
 
@@ -101,8 +138,17 @@ const Register_new = () => {
                     type="text"
                     placeholder="Name"
                     className=" input input-bordered  input-info max-w-[600px] w-full h-[45px]"
-                    // value={user.name}
-                    // onChange={handleInputs}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="w-full flex justify-center mt-4">
+                  <input
+                    type="text"
+                    placeholder="last"
+                    className=" input input-bordered  input-info max-w-[600px] w-full h-[45px]"
+                    value={last}
+                    onChange={(e) => setLast(e.target.value)}
                   />
                 </div>
                 <div className="w-full flex justify-center mt-4">
@@ -110,8 +156,8 @@ const Register_new = () => {
                     type="text"
                     placeholder="Phone"
                     className=" input input-bordered  input-info max-w-[600px] w-full h-[45px]"
-                    // value={user.phone}
-                    // onChange={handleInputs}
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
                 <div className="w-full flex justify-center mt-4">
@@ -119,8 +165,8 @@ const Register_new = () => {
                     type="text"
                     placeholder="Email"
                     className=" input input-bordered  input-info max-w-[600px] w-full h-[45x]"
-                    // value={user.email}
-                    // onChange={handleInputs}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="w-full flex justify-center mt-4">
@@ -128,14 +174,14 @@ const Register_new = () => {
                     type="text"
                     placeholder="Password"
                     className=" input input-bordered  input-info max-w-[600px] w-full h-[45px]"
-                    // value={user.password}
-                    // onChange={handleInputs}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <div className="w-full flex justify-center mt-4">
                   <button
                     className="w-[90px] h-[45px] bg-[#4B70E2] rounded-xl text-white font-bold tracking-wider px-4 py-2"
-                    // onClick={postData}
+                    onClick={handleLogin}
                   >
                     Register
                   </button>
